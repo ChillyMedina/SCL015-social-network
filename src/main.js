@@ -2,7 +2,7 @@ import { welcome } from './lib/view/templateWelcome.js';
 import { changeRoute } from './lib/router.js';
 
 const init = () => {
-  window.addEventListener('load', changeRoute(window.location.hash));
+  // window.addEventListener('load', changeRoute(window.location.hash)); No va...
   document.getElementById('root').appendChild(welcome());
   if ('onhashchange' in window) {
     window.onhashchange = () => {
