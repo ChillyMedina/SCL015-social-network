@@ -4,17 +4,17 @@ export const login = () => {
   const viewLogin = `
   <div class='login' id='login-screen'>
     <div class='phonePosition'>
-      <img src="img/logo.png" alt="">
-      <img src="img/arrow.png" alt="">
+      <img src="img/logo.png" alt="logo">
+      <img src="img/arrow.png" alt="backarrow">
       <h2>Iniciar sesión</h2>
-      <img src="img/google.png" alt="">
+      <img src="img/google.png" alt="google">
       <h6>Con tu cuenta Google</h6>
-      <img src="img/separator.png" alt="">
+      <img src="img/separator.png" alt="separator">
       <form id="login-form" class="input-group">
         <input type="email" placeholder="Correo electrónico" requiered >
         <input type="password" placeholder="Contraseña" requiered>
         <a href="#passReset">¿Olvidaste tu contraseña?</a>
-        <img src="img/scndloginbtn.png" id='loginButton' alt="">
+        <img src="img/scndloginbtn.png" id='loginButton' alt="loginbtn">
       </form>
     </div>
   </div>

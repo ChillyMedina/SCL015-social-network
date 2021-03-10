@@ -4,80 +4,96 @@
   /* font-family: 'Roboto Condensed', sans-serif; */
 }
 
-.welcome, .register, .login{
+.welcome, .register, .login, .muro{
   background-image: url("img/fondo.png");
-  position: absolute;
-  margin: 0 auto;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  width: 100vw;
   height: 100vh;
+  margin: 0 auto;
   overflow: hidden;
+  position: absolute;
+  width: 100vw;
 }
 
 .phonePosition{
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .description{
-  width: 26%;
+  color: #FFFFFF;
   font-family: 'Roboto Mono', monospace;
   font-size: 14px;
   line-height: 18px;
   text-align: center;
-  color: #FFFFFF;
   text-shadow: 0px 4px 2px #000000;
+  width: 26%;
 }
 
 h5{
+  color: #FFFFFF;
   font-family: 'Roboto Mono', monospace;
   font-size: 12px;
   line-height: 16px;
   text-align: center;
-  color: #FFFFFF;
   text-shadow: 0px 4px 2px #000000;
 }
 
 h2{
+  color: #FAFAFA;
   font-family: Roboto Condensed;
+  font-size: 24px;
   font-style: normal;
   font-weight: normal;
-  font-size: 24px;
   line-height: 28px;
   text-align: center;
-  color: #FAFAFA;
+  margin: 2%;
+}
+
+.arrow{
+  display: flex;
+  align-items: end;
 }
 
 .input-group{
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
 }
 
 .input-name{
-  width: 140px;
   height: 35px;
   margin: 10px;
+  width: 140px;
 }
 
 input{
-  margin: 10px;
-  width: 301px;
-  height: 35px;
   background: #FAFAFA;
   border-radius: 6px;
+  height: 35px;
+  margin: 10px;
+  width: 301px;
 }
 
 h6{
+  color: #F7E4A7;
   font-family: Roboto Mono;
+  font-size: 14px;
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
   line-height: 18px;
   text-align: center;
-  color: #F7E4A7;
+}
+
+.menu-flex{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2%;
+  margin-left: 38%;
+  margin-right: 39%;
 }
