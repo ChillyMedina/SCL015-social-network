@@ -4,16 +4,24 @@
   /* font-family: 'Roboto Condensed', sans-serif; */
 }
 
+/*-----------MOBILE-----------*/
+
+/*----WELCOME----*/
+.logo{
+  display: flex;
+  width: 50%;
+  margin-top: 8%;
+}
+
 .welcome, .register, .login, .muro{
   background-image: url("img/fondo.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
-  margin: 0 auto;
+  height: 100%;
   overflow: hidden;
   position: absolute;
-  width: 100vw;
+  width: 100%;
 }
 
 .phonePosition{
@@ -23,24 +31,33 @@
 }
 
 .description{
-  color: #FFFFFF;
+  color: #FAFAFA;
   font-family: 'Roboto Mono', monospace;
   font-size: 14px;
   line-height: 18px;
   text-align: center;
-  text-shadow: 0px 4px 2px #000000;
-  width: 26%;
+  text-shadow: 0px 4px 2px #181818;
+  width: 71%;
+  margin-top: 2%;
 }
 
 h5{
-  color: #FFFFFF;
+  color: #FAFAFA;
   font-family: 'Roboto Mono', monospace;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 13px;
+  line-height: 33px;
   text-align: center;
-  text-shadow: 0px 4px 2px #000000;
+  text-shadow: 0px 4px 2px #181818;
+  font-weight: lighter;
+  margin-top: 6%;
 }
 
+.registerBtn{
+  display: flex;
+  margin-top: 2%;
+}
+
+/*----Register----*/
 h2{
   color: #FAFAFA;
   font-family: Roboto Condensed;
@@ -49,12 +66,23 @@ h2{
   font-weight: normal;
   line-height: 28px;
   text-align: center;
-  margin: 2%;
+  margin-top: 15%;
 }
 
 .arrow{
   display: flex;
   align-items: end;
+  position: absolute;
+  margin-left: -76%;
+  margin-top: 14%;
+}
+
+.separator{
+  margin-top: 2%;
+}
+
+.google{
+  margin-top: 4%;
 }
 
 .input-group{
@@ -66,16 +94,20 @@ h2{
 
 .input-name{
   height: 35px;
-  margin: 10px;
-  width: 140px;
+  width: 128px;
 }
 
 input{
   background: #FAFAFA;
-  border-radius: 6px;
+  border-radius: 8px;
   height: 35px;
-  margin: 10px;
-  width: 301px;
+  width: 270px;
+  margin-top: 15px;
+  padding-left: 10px;
+}
+
+#registerButton{
+  margin-top: 5%;
 }
 
 h6{
@@ -84,8 +116,8 @@ h6{
   font-size: 14px;
   font-style: normal;
   font-weight: normal;
-  line-height: 18px;
   text-align: center;
+  margin-top: 2%;
 }
 
 .menu-flex{
@@ -96,4 +128,33 @@ h6{
   margin: 2%;
   margin-left: 38%;
   margin-right: 39%;
+}
+
+.addimg > input {
+  display: none;
+}
+
+img {
+  cursor: pointer;
+}
+
+/*----Login----*/
+
+.loginTittle{
+  margin-top: 5%;
+}
+
+a.password:link {
+  text-decoration: none;
+}
+a.password:visited {
+  text-decoration: none;
+  color: #F7E4A7;
+} 
+a.password:active {
+  text-decoration: none;
+} 
+a.password:hover {
+  text-decoration: none; 
+  color:#F7E4A7;
 }
