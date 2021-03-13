@@ -19,7 +19,7 @@ export const register = () => {
         <input type="text" placeholder="Nombre de usuario" requiered >
         <input type="email" placeholder="Correo electrónico" requiered >
         <input type="password" placeholder="Contraseña" requiered>
-        <img src="img/scndregisterbtn.png" id='registerButton' alt="registerbtn">
+        <img src="img/scndregisterbtn.png" id='registerButton' onclick='register()' alt="registerbtn">
       </form>
     </div>
   </div>

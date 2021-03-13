@@ -1,3 +1,5 @@
+import { loginGoogle } from '../index.js';
+
 export const login = () => {
   const divLogin = document.createElement('div');
 
@@ -7,7 +9,7 @@ export const login = () => {
       <img class='logo' src="img/logo.png" alt="logo">
       <img src="img/arrow.png" class='arrow' alt="backarrow">
       <h2 class='loginTittle' >Iniciar sesión</h2>
-      <img src="img/google.png" class='google' alt="google">
+      <img src="img/google.png" class='google' alt="google" id='loginGoogleBtn'>
       <h6>Con tu cuenta Google</h6>
       <img src="img/separator.png" class='separator' alt="separator">
       <form id="login-form" class="input-group">
@@ -20,9 +22,10 @@ export const login = () => {
   </div>
         `;
   divLogin.innerHTML = viewLogin;
-  // const enterBtn = divLogin.querySelector('#loginButton');
-  // enterBtn.addEventListener('click', () => {
-  //   window.location.hash = 'login';
-  // });
+  const googleBtn = divLogin.querySelector('#loginGoogleBtn');
+  googleBtn.addEventListener('click', () => {
+    window.location.hash = 'muro';
+    loginGoogle();
+  });
   return divLogin;
 };
