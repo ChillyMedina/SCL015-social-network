@@ -144,9 +144,13 @@ img {
   margin-top: 5%;
 }
 
+a.password{
+  margin-top: 4%;
+  font-family: Roboto Mono;
+  font-size: 13px;
+}
 a.password:link {
   text-decoration: none;
-  margin: 4%;
 }
 a.password:visited {
   text-decoration: none;
@@ -160,6 +164,9 @@ a.password:hover {
   color:#F7E4A7;
 }
 
+#loginButton{
+  margin-top: 6%;
+}
 
 /*-----Recover Password-----*/
 
