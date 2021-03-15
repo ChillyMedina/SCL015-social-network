@@ -4,7 +4,7 @@ export const register = () => {
   const viewRegister = `
   <div class='register' id='register-screen'>
     <div class='phonePosition'>
-      <img src="img/arrow.png" class='arrow' alt="backarrow"><h2>Registro</h2>
+      <img src="img/arrow.png" class='arrow' alt="backarrow" id="backArrowBtn" type="button"><h2>Registro</h2>
       <img src="img/google.png" class='google' alt="google">
       <h6>Con tu cuenta Google</h6>
       <img src="img/separator.png" class='separator' alt="separator">
@@ -19,7 +19,7 @@ export const register = () => {
         <input type="text" placeholder="Nombre de usuario" requiered >
         <input type="email" placeholder="Correo electrónico" requiered >
         <input type="password" placeholder="Contraseña" requiered>
-        <img src="img/scndregisterbtn.png" id='registerButton' alt="registerbtn">
+        <img src="img/scndregisterbtn.png" id='registerButton' onclick='register()' alt="registerbtn">
       </form>
     </div>
   </div>
@@ -27,7 +27,11 @@ export const register = () => {
   divRegister.innerHTML = viewRegister;
   const registerBtn = divRegister.querySelector('#registerButton');
   registerBtn.addEventListener('click', () => {
-    window.location.hash = 'muro';
+    window.location.hash = 'wall';
+  });
+  const backArrowBtn = divRegister.querySelector('#backArrowBtn');
+  backArrowBtn.addEventListener('click', () => {
+    window.location.hash = '';
   });
   return divRegister;
 };

@@ -13,8 +13,8 @@
   margin-top: 8%;
 }
 
-.welcome, .register, .login, .muro{
-  background-image: url("img/fondo.png");
+.welcome, .register, .login, .wall, .recover, .profile, .editProfile{
+  background-image: url("img/background.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -38,7 +38,7 @@
   text-align: center;
   text-shadow: 0px 4px 2px #181818;
   width: 71%;
-  margin-top: 2%;
+  margin-top: 7%;
 }
 
 h5{
@@ -60,7 +60,7 @@ h5{
 /*----Register----*/
 h2{
   color: #FAFAFA;
-  font-family: Roboto Condensed;
+  font-family: 'Roboto Condensed', sans-serif;
   font-size: 24px;
   font-style: normal;
   font-weight: normal;
@@ -112,7 +112,7 @@ input{
 
 h6{
   color: #F7E4A7;
-  font-family: Roboto Mono;
+  font-family: 'Roboto Mono', monospace;
   font-size: 14px;
   font-style: normal;
   font-weight: normal;
@@ -146,6 +146,7 @@ img {
 
 a.password:link {
   text-decoration: none;
+  margin: 4%;
 }
 a.password:visited {
   text-decoration: none;
@@ -157,4 +158,81 @@ a.password:active {
 a.password:hover {
   text-decoration: none; 
   color:#F7E4A7;
+}
+
+
+/*-----Recover Password-----*/
+
+.recoverTittle{
+  margin: 8%;
+}
+.recoverDescription{
+  font-family: 'Roboto Mono', monospace;
+  font-size: 13px;
+  line-height: 17px;
+  text-align: center;
+  color: #E2C25B;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.7);
+  width: 70%;
+  margin: 8%;
+}
+.recoverInput{
+  margin: 0%;
+}
+
+/*-------Wall--------*/
+
+#checkMenu{
+  display: none;
+}
+.menu{
+  top: 11%;
+  position: fixed;
+  width: 0px;
+  height: 0px;
+  background: #FFFFFF;
+  border: 1px solid #C4C4C4;
+  border-radius: 8px;
+  /* transition: all 300ms; */
+  transition: all 500ms cubic-bezier(1,0,0,1);
+  overflow: hidden;
+}
+#checkMenu:checked ~ .menu{
+  width: 100px;
+  height: 40px;
+}
+.menu a:hover{
+  background: rgba(0,0,0,0.2);
+}
+.menu a{
+  padding: 5px;
+  transition: all 300ms;
+  cursor: pointer;
+  display: block;
+  width: 400px;
+  height: 10px;
+}
+a:link {
+  text-decoration: none;
+}
+a{
+  color: #181818;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 14px;
+  line-height: 12px;
+}
+
+/*-------Profile--------*/
+
+.profileImg > input {
+  display: none;
+}
+.profileDescription{
+  height: 110px;
+}
+.profileButton{
+  margin: 12%;
+}
+.profileTittle{
+  margin-bottom: 4%;
 }
