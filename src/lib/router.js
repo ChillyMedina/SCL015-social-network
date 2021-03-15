@@ -3,7 +3,7 @@ import { login } from './view/templateLogin.js';
 import { profile } from './view/templateProfile.js';
 import { editProfile } from './view/templateEditProfile.js';
 import { newPost } from './view/templateNewPost.js';
-import { muro } from './view/templateMuro.js';
+import { wall } from './view/templateWall.js';
 import { register } from './view/templateRegister.js';
 import { passReset } from './view/templatePasswordReset.js';
 
@@ -30,8 +30,8 @@ const showTemplate = (hash) => {
     case '#editProfile':
       containerRoot.appendChild(editProfile());
       break;
-    case '#muro':
-      containerRoot.appendChild(muro());
+    case '#wall':
+      containerRoot.appendChild(wall());
       break;
     case '#newPost':
       containerRoot.appendChild(newPost());
@@ -62,7 +62,7 @@ export const changeRoute = (hash) => {
   if (hash === '#editProfile') {
     return showTemplate(hash);
   }
-  if (hash === '#muro') {
+  if (hash === '#wall') {
     return showTemplate(hash);
   }
   if (hash === '#newPost') {
