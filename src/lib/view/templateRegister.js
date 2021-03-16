@@ -1,3 +1,5 @@
+import { registerUser } from '../index.js';
+
 export const register = () => {
   const divRegister = document.createElement('div');
 
@@ -15,20 +17,24 @@ export const register = () => {
         <input id="input-file" type="file"/>
       </div>
       <form id="register-form" class="input-group">
-        <div class='namelast'><input type="text" class="input-name" placeholder="Nombre" requiered ><input type="text" class="input-name" placeholder="Apellido" requiered ></div>
-        <input type="text" placeholder="Nombre de usuario" requiered >
-        <input type="email" placeholder="Correo electrónico" requiered >
-        <input type="password" placeholder="Contraseña" requiered>
+        <div class='namelast'><input id='name' type="text" class="input-name" placeholder="Nombre" requiered ><input id='lastname' type="text" class="input-name" placeholder="Apellido" requiered ></div>
+        <input id='username' type="text" placeholder="Nombre de usuario" requiered >
+        <input id='email' type="email" placeholder="Correo electrónico" requiered >
+        <input id='password' type="password" placeholder="Contraseña" requiered>
         <img src="img/scndregisterbtn.png" id='registerButton' onclick='register()' alt="registerbtn">
       </form>
     </div>
   </div>
         `;
   divRegister.innerHTML = viewRegister;
+
   const registerBtn = divRegister.querySelector('#registerButton');
   registerBtn.addEventListener('click', () => {
-    window.location.hash = 'wall';
+    // window.location.hash = 'wall';
+    registerUser();
   });
+
+  // Flecha para volver
   const backArrowBtn = divRegister.querySelector('#backArrowBtn');
   backArrowBtn.addEventListener('click', () => {
     window.location.hash = '';

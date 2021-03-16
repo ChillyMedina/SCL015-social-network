@@ -1,4 +1,5 @@
 import { loginGoogle } from '../index.js';
+import { observer } from '../index.js';
 
 export const login = () => {
   const divLogin = document.createElement('div');
@@ -37,5 +38,6 @@ export const login = () => {
   backArrowBtn.addEventListener('click', () => {
     window.location.hash = '';
   });
+  observer();
   return divLogin;
 };
