@@ -14,10 +14,13 @@ export const welcome = () => {
   </div>
       `;
   divWelcome.innerHTML = viewWelcome;
+  // -------------Cambio a template registe--------------------
   const registerBtn = divWelcome.querySelector('#registerBtn');
   registerBtn.addEventListener('click', () => {
     window.location.hash = 'register';
   });
+
+  // -------------Cambio a template login--------------------
   const loginBtn = divWelcome.querySelector('#loginBtn');
   loginBtn.addEventListener('click', () => {
     window.location.hash = 'login';

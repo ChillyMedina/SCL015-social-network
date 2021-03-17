@@ -20,6 +20,7 @@ export const profile = () => {
     </div>
       `;
   divProfile.innerHTML = viewProfile;
+  // -------------Cambio a template --------------------
   const enterBtn = divProfile.querySelector('#loginBtn');
   enterBtn.addEventListener('click', () => {
     window.location.hash = '';
