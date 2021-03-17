@@ -30,6 +30,7 @@ export const loginGoogle = () => {
      })
 ;}
 
+//----------------------------------------------------
 export const registerUser = () => {
   let email = document.getElementById('email').value;
   let password = document.getElementById('password').value;
@@ -51,6 +52,7 @@ export const registerUser = () => {
   }); 
 };
 
+//--------------------------------------------------
 export const observer = () => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
