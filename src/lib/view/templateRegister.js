@@ -19,8 +19,8 @@ export const register = () => {
       <form id="register-form" class="input-group">
         <div class='namelast'><input id='name' type="text" class="input-name" placeholder="Nombre" requiered ><input id='lastname' type="text" class="input-name" placeholder="Apellido" requiered ></div>
         <input id='username' type="text" placeholder="Nombre de usuario" requiered >
-        <input id='email' type="email" placeholder="Correo electrónico" requiered >
-        <input id='password' type="password" placeholder="Contraseña" requiered>
+        <input id='emailRegister' type="email" placeholder="Correo electrónico" requiered >
+        <input id='passwordRegister' type="password" placeholder="Contraseña" requiered>
         <img src="img/scndregisterbtn.png" id='registerButton' onclick='register()' alt="registerbtn">
       </form>
     </div>

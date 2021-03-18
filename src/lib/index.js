@@ -12,7 +12,7 @@ export const loginGoogle = () => {
       var token = credential.accessToken;
       // The signed-in user info.
       var user = result.user;
-      console.log("el usuario entró");
+      console.log("El usuario entró");
       console.log('user', user)
       // ...
     })
@@ -25,18 +25,38 @@ export const loginGoogle = () => {
       // The firebase.auth.AuthCredential type that was used.
       var credential = error.credential;
       console.log('error', errorMessage)
-      console.log("el usuario no entró");
+      console.log("El usuario no entró");
        alert("No pudimos validar tus datos");
      })
 ;}
 
 //----------------------------------------------------
+export const loginUser = () => {
+  let emailLogin = document.getElementById('emailLogin').value;
+  let passwordLogin = document.getElementById('passwordLogin').value;
+  console.log(emailLogin);
+  console.log(passwordLogin);
+  firebase.auth().signInWithEmailAndPassword(emailLogin, passwordLogin)
+  .then((user) => {
+    var user = result.user;
+      console.log("El usuario entró");
+      console.log('user', user)
+    // Signed in
+    // ...
+  })
+  .catch((error) => {
+    let errorCode = error.code;
+    let errorMessage = error.message;
+  });
+}
+
+//----------------------------------------------------
 export const registerUser = () => {
-  let email = document.getElementById('email').value;
-  let password = document.getElementById('password').value;
-  console.log(email);
-  console.log(password);
-  firebase.auth().createUserWithEmailAndPassword(email, password)
+  let emailRegister = document.getElementById('emailRegister').value;
+  let passwordRegister = document.getElementById('passwordRegister').value;
+  console.log(emailRegister);
+  console.log(passwordRegister);
+  firebase.auth().createUserWithEmailAndPassword(emailRegister, passwordRegister)
   .then((user) => {
     // Signed in
     // ...
@@ -56,13 +76,25 @@ export const registerUser = () => {
 export const observer = () => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
+      console.log('Existe usuario activo');
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/firebase.User
       var uid = user.uid;
+      var displayName = user.displayName;
+      var email = user.email;
+      console.log(email)
+      var emailVerified = user.emailVerified;
+      console.log(emailVerified)
+      var photoURL = user.photoURL;
+      var isAnonymous = user.isAnonymous;
+      var uid = user.uid;
+      var providerData = user.providerData;
       // ...
     } else {
       // User is signed out
+      console.log('No existe usuario activo');
       // ...
     }
   });
 }
+observer();
