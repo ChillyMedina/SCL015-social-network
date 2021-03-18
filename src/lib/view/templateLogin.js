@@ -1,5 +1,4 @@
-import { loginGoogle } from '../index.js';
-import { observer } from '../index.js';
+import { loginGoogle, loginUser, observer } from '../index.js';
 
 export const login = () => {
   const divLogin = document.createElement('div');
@@ -8,16 +7,16 @@ export const login = () => {
   <div class='login' id='login-screen'>
     <div class='phonePosition'>
       <img class='logo' src="img/logo.png" alt="logo">
-      <img src="img/arrow.png" class='arrow' alt="backarrow" id="backArrowBtn" type="button">
+      <img src="img/arrow.png" class='arrow' alt="backarrow" id="backArrowButton" type="button">
       <h2 class='loginTittle' >Iniciar sesión</h2>
-      <img src="img/google.png" class='google' alt="google" id='loginGoogleBtn'>
+      <img src="img/google.png" class='google' alt="google" id='loginGoogleButton'>
       <h6>Con tu cuenta Google</h6>
       <img src="img/separator.png" class='separator' alt="separator">
       <form id="login-form" class="input-group">
-        <input type="email" placeholder="Correo electrónico" requiered id="emailInput">
-        <input type="password" placeholder="Contraseña" requiered id="passwordInput">
+        <input type="email" placeholder="Correo electrónico" requiered id="emailLogin">
+        <input type="password" placeholder="Contraseña" requiered id="passwordLogin">
         <a href="#passReset" class='password'>¿Olvidaste tu contraseña?</a>
-        <img src="img/scndloginbtn.png" id='loginButton' alt="loginbtn" type="button">
+        <img src="img/loginbutton2.png" id='loginButton' alt="loginbutton" type="button">
       </form>
     </div>
   </div>
@@ -25,17 +24,22 @@ export const login = () => {
   divLogin.innerHTML = viewLogin;
 
   // Iniciar sesión con Google
-  const googleBtn = divLogin.querySelector('#loginGoogleBtn');
-  googleBtn.addEventListener('click', () => {
+  const googleButton = divLogin.querySelector('#loginGoogleButton');
+  googleButton.addEventListener('click', () => {
     window.location.hash = 'wall';
     loginGoogle();
   });
 
   // Iniciar sesión con email
+  const loginButton = divLogin.querySelector('#loginButton');
+  loginButton.addEventListener('click', () => {
+    // window.location.hash = 'wall';
+    loginUser();
+  });
 
   // Flecha para volver
-  const backArrowBtn = divLogin.querySelector('#backArrowBtn');
-  backArrowBtn.addEventListener('click', () => {
+  const backArrowButton = divLogin.querySelector('#backArrowButton');
+  backArrowButton.addEventListener('click', () => {
     window.location.hash = '';
   });
   observer();
