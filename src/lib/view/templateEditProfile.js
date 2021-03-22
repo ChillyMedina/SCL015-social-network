@@ -25,5 +25,11 @@ export const editProfile = () => {
   enterBtn.addEventListener('click', () => {
     window.location.hash = 'editProfile';
   });
+
+  // Flecha para volver
+  const backArrowButton = divEditProfile.querySelector('#backArrowButton');
+  backArrowButton.addEventListener('click', () => {
+    window.location.hash = '';
+  });
   return divEditProfile;
 };

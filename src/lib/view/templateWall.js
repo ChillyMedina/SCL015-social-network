@@ -1,9 +1,10 @@
+import { logout } from '../index.js';
+
 export const wall = () => {
   const divWall = document.createElement('div');
 
   const viewWall = `
   <div class='wall' id='wall-screen'>
-      <main>
         <div class='menuBar'>
           <header></header>
           <input type="checkbox" id="checkMenu">
@@ -15,17 +16,19 @@ export const wall = () => {
           <nav class="menu">
             <ul>
               <li><a href="#editProfile">Editar Perfil</a></li>
-              <li><a href="#">Cerrar sesión</a></li>
+              <li><a id='logoutButton'>Cerrar sesión</a></li>
             </ul>
           </nav>
         </div>
-     </main>
+      <main id="wallContent" class="wallContent"></main>
     </div>
         `;
   divWall.innerHTML = viewWall;
-  // const enterBtn = divWall.querySelector('#wallButton');
-  // enterBtn.addEventListener('click', () => {
-  //   window.location.hash = '';
-  // });
+
+  // botón cerrar sesión
+  const logoutButton = divWall.querySelector('#logoutButton');
+  logoutButton.addEventListener('click', () => {
+    logout();
+  });
   return divWall;
 };

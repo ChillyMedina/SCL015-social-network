@@ -26,14 +26,12 @@ export const login = () => {
   // Iniciar sesión con Google
   const googleButton = divLogin.querySelector('#loginGoogleButton');
   googleButton.addEventListener('click', () => {
-    window.location.hash = 'wall';
     loginGoogle();
   });
 
   // Iniciar sesión con email
   const loginButton = divLogin.querySelector('#loginButton');
   loginButton.addEventListener('click', () => {
-    // window.location.hash = 'wall';
     loginUser();
   });
 
