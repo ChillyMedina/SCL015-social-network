@@ -10,19 +10,18 @@ export const loginGoogle = () => {
       var credential = result.credential;
       // This gives you a Google Access Token. You can use it to access the Google API.
       var token = credential.accessToken;
-      // The signed-in user info.
+      // La información del usuario que inicia sesión
       var user = result.user;
       console.log("El usuario entró");
       console.log('user', user)
       window.location.hash = 'wall';
     })
     .catch((error) => {
-      // Handle Errors here.
+      // Código del error
       var errorCode = error.code;
+      // Mensaje del error
       var errorMessage = error.message;
-      // The email of the user's account used.
       var email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
       var credential = error.credential;
       console.log('error', errorMessage)
       console.log("El usuario no entró");
@@ -32,22 +31,25 @@ export const loginGoogle = () => {
 
 //----------------------------------------------------
 export const registerUser = () => {
+  // Variables que guardan los datos de los input's email y contraseña
   let emailRegister = document.getElementById('emailRegister').value;
   let passwordRegister = document.getElementById('passwordRegister').value;
   console.log(emailRegister);
   console.log(passwordRegister);
 
   //Codigo de firebase
-  firebase.auth().createUserWithEmailAndPassword(emailRegister, passwordRegister)
+  firebase
+  .auth()
+  .createUserWithEmailAndPassword(emailRegister, passwordRegister)
   .then((user) => {
     //Pasa al template login para inicnar sesión por primera vez
     window.location.hash = 'login';
    console.log(user)
    //Envía el correo de verificación al usuario
-   var usuario = firebase.auth().currentUser;
-   usuario.sendEmailVerification()
+   var user = firebase.auth().currentUser;
+   user.sendEmailVerification()
     .then(function() {
-    // Email sent.
+    // Se envía el email de verificación
       alert('El registro ha sido exitoso.Te hemos enviado un correo de verificación para que puedas iniciar sesión')
   })
   .catch((error) => {
@@ -75,18 +77,23 @@ export const loginUser = () => {
   console.log(passwordLogin);
 
   //codigo de firebase para iniciar sesión con correo
-  firebase.auth().signInWithEmailAndPassword(emailLogin, passwordLogin)
+  firebase
+  .auth()
+  .signInWithEmailAndPassword(emailLogin, passwordLogin)
   .then((user) => {
-    if(user.emailVerified){
-    //Inicia sesión y pasa al muro
-    window.location.hash = 'wall';
-    var user = result.user;
-      console.log("El usuario entró");
-      console.log('user', user)
-    }
-    else{
+    if(!user.user.emailVerified){
       alert('Verifica tu correo para iniciar sesión.')
-    }
+      }
+      else{
+        //Inicia sesión y pasa al muro
+      window.location.hash = 'wall';
+      var user = result.user;
+        console.log("El usuario entró");
+        console.log('user', user)
+      }
+    // console.log(user, 'user');
+    // console.log(user.user.emailVerified, 'email verified');
+    // window.location.hash = 'wall';
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -106,25 +113,26 @@ export const loginUser = () => {
 
 //--------------------------------------------------
 export const observer = () => {
-  firebase.auth().onAuthStateChanged((user) => {
+  firebase
+  .auth()
+  .onAuthStateChanged((user) => {
     if (user) {
       console.log('Existe usuario activo');
-      // User is signed in, see docs for a list of available properties
+      // User is signed in, see docs for a list of available properties.
       var uid = user.uid;
       var displayName = user.displayName;
-      //correo ingresado por el usuario
+      //correo ingresado por el usuario.
       var email = user.email;
       console.log(email)
-      //Comprueba si el mail fue verificado
+      //Comprueba si el email fue verificado.
       var emailVerified = user.emailVerified;
       console.log(emailVerified)
-
       var photoURL = user.photoURL;
       var isAnonymous = user.isAnonymous;
       var uid = user.uid;
       var providerData = user.providerData;
     } else {
-      // User is signed out
+      // El usuario cerró sesión.
       console.log('No existe usuario activo');
       // ...
     }
@@ -135,12 +143,12 @@ observer();
 export const logout = () => {
   firebase.auth().signOut()
   .then(() => {
-    // Sign-out successful.
+    // Cierre de sesión exitoso.
     console.log('Saliendo...')
     window.location.hash = '';
   })
   .catch((error) => {
-    // An error happened.
+    // Ha ocurrido un error.
     console.log(error)
   });
 }
