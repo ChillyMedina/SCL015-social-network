@@ -43,14 +43,14 @@ export const registerUser = () => {
   .createUserWithEmailAndPassword(emailRegister, passwordRegister)
   .then((user) => {
     //Pasa al template login para inicnar sesión por primera vez
-    window.location.hash = 'login';
+    window.location.hash = 'completeProfile';
    console.log(user)
    //Envía el correo de verificación al usuario
    var user = firebase.auth().currentUser;
    user.sendEmailVerification()
     .then(function() {
     // Se envía el email de verificación
-      alert('El registro ha sido exitoso.Te hemos enviado un correo de verificación para que puedas iniciar sesión')
+      alert('El registro ha sido exitoso. Completa los datos para tu perfil')
   })
   .catch((error) => {
     let errorCode = error.code;
@@ -71,6 +71,7 @@ export const registerUser = () => {
 
 //----------------------------------------------------
 export const loginUser = () => {
+
   let emailLogin = document.getElementById('emailLogin').value;
   let passwordLogin = document.getElementById('passwordLogin').value;
   console.log(emailLogin);
@@ -81,21 +82,20 @@ export const loginUser = () => {
   .auth()
   .signInWithEmailAndPassword(emailLogin, passwordLogin)
   .then((user) => {
+    // Si el email no está verificado muestra un alert
     if(!user.user.emailVerified){
       alert('Verifica tu correo para iniciar sesión.')
       }
       else{
-        //Inicia sesión y pasa al muro
+        //Si está verificado inicia sesión y pasa al muro
       window.location.hash = 'wall';
       var user = result.user;
         console.log("El usuario entró");
         console.log('user', user)
       }
-    // console.log(user, 'user');
-    // console.log(user.user.emailVerified, 'email verified');
-    // window.location.hash = 'wall';
   })
   .catch((error) => {
+    // Posibles errores
     const errorCode = error.code;
       switch (errorCode) {
         case 'auth/user-not-found':

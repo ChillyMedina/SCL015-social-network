@@ -6,19 +6,13 @@ export const register = () => {
   const viewRegister = `
   <div class='register' id='register-screen'>
     <div class='phonePosition'>
-      <img src="img/arrow.png" class='arrow' alt="backarrow" id="backArrowBtn" type="button"><h2>Registro</h2>
+      <img class='logo' src="img/logo.png" alt="logo">
+      <img src="img/arrow.png" class='arrow' alt="backarrow" id="backArrowBtn" type="button">
+      <h2 class='loginTittle'>Regístrate</h2>
       <img src="img/google.png" class='google' alt="google" id='registerGoogleButton'>
       <h6>Con tu cuenta Google</h6>
       <img src="img/separator.png" class='separator' alt="separator">
-      <div class="addimg">
-        <label for="input-file">
-          <img src="img/addimg.png" />
-        </label>
-        <input id="input-file" type="file"/>
-      </div>
       <form id="register-form" class="input-group">
-        <div class='namelast'><input id='name' type="text" class="input-name" placeholder="Nombre" requiered ><input id='lastname' type="text" class="input-name" placeholder="Apellido" requiered ></div>
-        <input id='username' type="text" placeholder="Nombre de usuario" requiered >
         <input id='emailRegister' type="email" placeholder="Correo electrónico" requiered >
         <input id='passwordRegister' type="password" placeholder="Contraseña" requiered>
         <img src="img/scndregisterbtn.png" id='registerButton' onclick='register()' alt="registerButton">
