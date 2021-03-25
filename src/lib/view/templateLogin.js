@@ -8,7 +8,7 @@ export const login = () => {
     <div class='phonePosition'>
       <img class='logo' src="img/logo.png" alt="logo">
       <img src="img/arrow.png" class='arrow' alt="backarrow" id="backArrowButton" type="button">
-      <h2 class='loginTittle' >Iniciar sesión</h2>
+      <h2 class='loginTittle' >Inicia sesión</h2>
       <img src="img/google.png" class='google' alt="google" id='loginGoogleButton'>
       <h6>Con tu cuenta Google</h6>
       <img src="img/separator.png" class='separator' alt="separator">

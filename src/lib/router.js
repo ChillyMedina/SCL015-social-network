@@ -6,6 +6,7 @@ import { newPost } from './view/templateNewPost.js';
 import { wall } from './view/templateWall.js';
 import { register } from './view/templateRegister.js';
 import { passReset } from './view/templatePasswordReset.js';
+import { completeProfile } from './view/templateCompleteProfile.js';
 
 const showTemplate = (hash) => {
   const containerRoot = document.getElementById('root');
@@ -23,6 +24,9 @@ const showTemplate = (hash) => {
       break;
     case '#register':
       containerRoot.appendChild(register());
+      break;
+    case '#completeProfile':
+      containerRoot.appendChild(completeProfile());
       break;
     case '#profile':
       containerRoot.appendChild(profile());
@@ -54,6 +58,9 @@ export const changeRoute = (hash) => {
     return showTemplate(hash);
   }
   if (hash === '#register') {
+    return showTemplate(hash);
+  }
+  if (hash === '#completeProfile') {
     return showTemplate(hash);
   }
   if (hash === '#profile') {

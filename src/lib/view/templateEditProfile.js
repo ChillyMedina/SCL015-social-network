@@ -13,7 +13,7 @@ export const editProfile = () => {
       </div>
     <form id="editProfile-form" class="input-group">
       <div class='namelast'><input type="text" class="input-name" placeholder="Nombre"><input type="text" class="input-name" placeholder="Apellido" ></div>
-      <input type="text" placeholder="Nombre de usuario" >
+      <input type="text" class="input-name" placeholder="Nombre de usuario" >
       <input type="text" placeholder="Cuéntanos sobre ti..." class="profileDescription">
       <img src="img/guardarbtn.png" id='editProfileButton' class="EditProfileButton" alt="registerbtn">
     </form>
@@ -23,7 +23,7 @@ export const editProfile = () => {
   divEditProfile.innerHTML = viewEditProfile;
   const enterBtn = divEditProfile.querySelector('#editProfileButton');
   enterBtn.addEventListener('click', () => {
-    window.location.hash = 'editProfile';
+    window.location.hash = 'wall';
   });
 
   // Flecha para volver
