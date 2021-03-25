@@ -4,7 +4,7 @@ export const editProfile = () => {
   const viewEditProfile = `
   <div class='editProfile' id='editProfile-screen'>
   <div class='phonePosition'>
-    <img src="img/arrow.png" class='arrow' alt="backarrow" id="backArrowBtn" type="button"><h2 class="profileTittle">Editar perfil</h2>
+    <h2 class="profileTittle">Editar perfil</h2>
     <div class="addimg">
         <label for="input-file">
           <img src="img/newprofileimg.png" />
@@ -13,7 +13,7 @@ export const editProfile = () => {
       </div>
     <form id="editProfile-form" class="input-group">
       <div class='namelast'><input type="text" class="input-name" placeholder="Nombre"><input type="text" class="input-name" placeholder="Apellido" ></div>
-      <input type="text" class="input-name" placeholder="Nombre de usuario" >
+      <input type="text" class="input-username" placeholder="Nombre de usuario" >
       <input type="text" placeholder="Cuéntanos sobre ti..." class="profileDescription">
       <img src="img/guardarbtn.png" id='editProfileButton' class="EditProfileButton" alt="registerbtn">
     </form>
@@ -21,15 +21,10 @@ export const editProfile = () => {
 </div>
         `;
   divEditProfile.innerHTML = viewEditProfile;
-  const enterBtn = divEditProfile.querySelector('#editProfileButton');
-  enterBtn.addEventListener('click', () => {
-    window.location.hash = 'wall';
-  });
+  // const enterBtn = divEditProfile.querySelector('#editProfileButton');
+  // enterBtn.addEventListener('click', () => {
+  //   window.location.hash = 'wall';
+  // });
 
-  // Flecha para volver
-  const backArrowButton = divEditProfile.querySelector('#backArrowButton');
-  backArrowButton.addEventListener('click', () => {
-    window.location.hash = '';
-  });
   return divEditProfile;
 };
