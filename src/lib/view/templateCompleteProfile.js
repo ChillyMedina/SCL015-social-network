@@ -57,5 +57,11 @@ export const completeProfile = () => {
     alert('Verifica tu correo e inicia sesión');
   });
 
+  const uploadProfileImg = () => {
+    const file = ($('input-file'))[0].files[0];
+
+    console.log(file);
+  };
+
   return divCompleteProfile;
 };
