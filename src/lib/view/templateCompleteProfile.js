@@ -26,6 +26,11 @@ export const completeProfile = () => {
   //   window.location.hash = 'wall';
   // });
 
+  // Inializar Cloud Firestore a través de Firebase
+
+  const db = firebase.firestore();
+
+  // Agregar usuarios
   const saveUser = () => {
     // Variables que guardan los datos del usuario
     const name = document.getElementById('name').value;
@@ -33,10 +38,7 @@ export const completeProfile = () => {
     const username = document.getElementById('username').value;
     const description = document.getElementById('userDescription').value;
 
-    // Inializar Cloud Firestore a través de Firebase
-    firebase
-      .firestore()
-      .collection('users')
+    db.collection('users')
       .add({
         first: name,
         last: lastname,
@@ -57,11 +59,20 @@ export const completeProfile = () => {
     alert('Verifica tu correo e inicia sesión');
   });
 
-  const uploadProfileImg = () => {
-    const file = ($('input-file'))[0].files[0];
-
-    console.log(file);
-  };
+  // // Leer documentos
+  // const userForm = document.querySelector('#completeProfile-form');
+  // db.collection('users')
+  //   .get()
+  //   .then((querySnapshot) => {
+  //     userForm.innerHTML = '';
+  //     querySnapshot.forEach((doc) => {
+  //       console.log(`${doc.id} => ${doc.data().user}`);
+  //       userForm.innerHTML += `
+  //       <h2>${doc.id}</h2>
+  //       <h3>${doc.data().user}</h3>
+  //     `;
+  //     });
+  //   });
 
   return divCompleteProfile;
 };

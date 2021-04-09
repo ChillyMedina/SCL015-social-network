@@ -20,6 +20,10 @@ export const wall = () => {
             </ul>
           </nav>
         </div>
+        <form id="form-wall" class="form-wall">
+          <input type="text" id="post" class="post-container" />
+          <button>Publicar</button>
+        </form>
       <main id='wallContent' class='wallContent'></main>
     </div>
         `;
@@ -30,5 +34,27 @@ export const wall = () => {
   logoutButton.addEventListener('click', () => {
     logout();
   });
+
+  // Inializar Cloud Firestore a través de Firebase
+
+  // const db = firebase.firestore();
+
+  // // Agregar usuarios
+  // const savePost = () => {
+  //   // Variables que guardan los datos del usuario
+  //   const text = document.querySelector('#post').value;
+
+  //   db.collection('post')
+  //     .add({
+  //       post: text,
+  //     })
+  //     .then((docRef) => {
+  //       console.log('Document written with ID: ', docRef.id);
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error adding document: ', error);
+  //     });
+  // };
+  // savePost();
   return divWall;
 };
